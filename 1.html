@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta charset="UTF-8">
+	<title>太极图</title>
+	<style type="text/css">
+		canvas{
+			/*border: 1px solid red;*/
+			animation-name: move;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+ 
+		@keyframes move{
+			0%{
+				transform: rotate(0deg);
+			}
+			100%{
+				transform: rotate(360deg);
+			}
+		}
+ 
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var canvas = document.getElementById('canvas')
+			var context = canvas.getContext('2d')
+			// 大圆
+			context.beginPath()
+			// Math.PI   Math.PI*3/2   270度
+			context.arc(200,200,200,Math.PI/2,Math.PI*3/2)
+			context.closePath()
+			context.fillStyle = 'black'
+			context.fill()
+ 
+			context.beginPath()
+			// Math.PI   Math.PI*3/2   270度
+			context.arc(200,200,200,Math.PI*3/2,Math.PI/2)
+			context.closePath()
+			context.fillStyle = 'red'
+			context.fill()
+ 
+			// 中圆
+			context.beginPath()
+			// Math.PI   Math.PI*3/2   270度
+			context.arc(200,100,100,0,Math.PI*2)
+			context.closePath()
+			context.fillStyle = 'black'
+			context.fill()
+ 
+			context.beginPath()
+			// Math.PI   Math.PI*3/2   270度
+			context.arc(200,300,100,0,Math.PI*2)
+			context.closePath()
+			context.fillStyle = 'red'
+			context.fill()
+ 
+			// 小圆
+			context.beginPath()
+			// Math.PI   Math.PI*3/2   270度
+			context.arc(200,300,20,0,Math.PI*2)
+			context.closePath()
+			context.fillStyle = 'black'
+			context.fill()
+ 
+			context.beginPath()
+			// Math.PI   Math.PI*3/2   270度
+			context.arc(200,100,20,0,Math.PI*2)
+			context.closePath()
+			context.fillStyle = 'red'
+			context.fill()
+			
+ 
+		}
+	</script>
+</head>
+<body>
+	<canvas id="canvas" width="400px" height="400px"></canvas>
+</body>
+</html>
